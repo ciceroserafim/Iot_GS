@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "author": "Cícero Serafim",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": -4.76, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -61,
+      "left": -105.6,
+      "attrs": { "color": "green", "xray": "1", "bounce": "1", "pin": "4", "pull": "up" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.1", "btn1:2.r", "black", [ "h0" ] ],
+    [ "esp:D4", "btn1:1.r", "green", [ "h38.4", "v-240" ] ]
+  ],
+  "dependencies": {}
+}

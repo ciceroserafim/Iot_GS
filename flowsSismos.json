@@ -1,0 +1,136 @@
+[
+    {
+        "id": "1b63776dd211ef21",
+        "type": "tab",
+        "label": "Fluxo 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8a6a9871d1cd9bec",
+        "type": "switch",
+        "z": "1b63776dd211ef21",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 270,
+        "y": 280,
+        "wires": [
+            [
+                "f386d6bdee84acf8",
+                "a51a5fa0c49d1cde"
+            ]
+        ]
+    },
+    {
+        "id": "3a947e955949e717",
+        "type": "mqtt in",
+        "z": "1b63776dd211ef21",
+        "name": "",
+        "topic": "safezone/vibracao",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "cc1ab6d363d04e5c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 120,
+        "wires": [
+            [
+                "8a6a9871d1cd9bec"
+            ]
+        ]
+    },
+    {
+        "id": "f386d6bdee84acf8",
+        "type": "ui_text",
+        "z": "1b63776dd211ef21",
+        "group": "f26b84bdb95d8756",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Alerta de Sismo",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 520,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "a51a5fa0c49d1cde",
+        "type": "debug",
+        "z": "1b63776dd211ef21",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "cc1ab6d363d04e5c",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "f26b84bdb95d8756",
+        "type": "ui_group",
+        "name": "SafeZone",
+        "tab": "",
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    }
+]

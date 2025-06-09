@@ -1,0 +1,129 @@
+[
+    {
+        "id": "979de210da0f0461",
+        "type": "tab",
+        "label": "Fluxo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "08a2f96fcece22e6",
+        "type": "function",
+        "z": "979de210da0f0461",
+        "name": "function 1",
+        "func": "msg.payload = parseFloat(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 260,
+        "wires": [
+            [
+                "ef59b9661d83ea1a"
+            ]
+        ]
+    },
+    {
+        "id": "831251da362fcb85",
+        "type": "mqtt in",
+        "z": "979de210da0f0461",
+        "name": "",
+        "topic": "safezone/temperatura",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "83d3f31661e5dae5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 240,
+        "y": 200,
+        "wires": [
+            [
+                "08a2f96fcece22e6"
+            ]
+        ]
+    },
+    {
+        "id": "ef59b9661d83ea1a",
+        "type": "ui_gauge",
+        "z": "979de210da0f0461",
+        "name": "gauge_températura",
+        "group": "2d7888eecb5fc63a",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 800,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "83d3f31661e5dae5",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "2d7888eecb5fc63a",
+        "type": "ui_group",
+        "name": "Sensores",
+        "tab": "6f7e3a6c8c6cbfe9",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6f7e3a6c8c6cbfe9",
+        "type": "ui_tab",
+        "name": "dashboard",
+        "icon": "dashboard",
+        "disabled": true,
+        "hidden": false
+    }
+]

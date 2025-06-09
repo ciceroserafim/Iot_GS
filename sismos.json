@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "author": "Cicero Serafim",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": -76.8,
+      "left": -91.16,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -124.5,
+      "left": -197.4,
+      "attrs": {
+        "temperature": "25",
+        "humidity": "50",
+        "sensor": "DHT22"
+      }
+    }
+  ],
+  "connections": [
+    ["esp:TX", "$serialMonitor:RX", "", []],
+    ["esp:RX", "$serialMonitor:TX", "", []],
+    ["dht1:VCC", "esp:5V", "red", ["v0"]],
+    ["dht1:GND", "esp:GND.1", "black", ["v0"]],
+    [ "dht1:DATA", "esp:D4", "green", [ "v0" ] ]
+
+  ]
+}
+
